@@ -1,0 +1,57 @@
+name: Release Notification
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "Casks/entire.rb"
+
+jobs:
+  notify-slack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check if version changed
+        id: version
+        run: |
+          CURRENT_VERSION=$(sed -n 's/.*release_asset_url("\([^"]*\)".*/\1/p' Casks/entire.rb | head -1)
+          PREVIOUS_VERSION=$(git show HEAD~1:Casks/entire.rb | sed -n 's/.*release_asset_url("\([^"]*\)".*/\1/p' | head -1 || echo "")
+
+          echo "Current version: $CURRENT_VERSION"
+          echo "Previous version: $PREVIOUS_VERSION"
+
+          if [ "$CURRENT_VERSION" != "$PREVIOUS_VERSION" ]; then
+            echo "Version changed from $PREVIOUS_VERSION to $CURRENT_VERSION"
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          else
+            echo "Version unchanged, skipping notification"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send Slack notification
+        if: steps.version.outputs.changed == 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+
+          curl -X POST "$SLACK_WEBHOOK_URL" \
+            -H 'Content-Type: application/json' \
+            -d "{
+              \"text\": \"🍺 New Entire CLI release: $VERSION\",
+              \"blocks\": [
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \"*New Entire CLI Release*\n\n:beer: Version *$VERSION* has been released!\"
+                  }
+                }
+              ]
+            }"
