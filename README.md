@@ -7,7 +7,7 @@ Private Homebrew tap for the Entire CLI.
 First, tap the repository (requires SSH access):
 
 ```bash
-brew tap entireio/homebrew-tap git@github.com:entireio/homebrew-tap.git
+brew tap entireio/tap git@github.com:entireio/homebrew-tap.git
 ```
 
 Then install:
@@ -27,5 +27,5 @@ brew upgrade entire
 
 ```bash
 brew uninstall entire
-brew untap entireio/homebrew-tap
+brew untap entireio/tap
 ```
