@@ -19,8 +19,8 @@ jobs:
       - name: Check if version changed
         id: version
         run: |
-          CURRENT_VERSION=$(sed -n 's/.*release_asset_url("\([^"]*\)".*/\1/p' Casks/entire.rb | head -1)
-          PREVIOUS_VERSION=$(git show HEAD~1:Casks/entire.rb | sed -n 's/.*release_asset_url("\([^"]*\)".*/\1/p' | head -1 || echo "")
+          CURRENT_VERSION=$(sed -n 's/^[[:space:]]*version "\([^"]*\)".*/\1/p' Casks/entire.rb)
+          PREVIOUS_VERSION=$(git show HEAD~1:Casks/entire.rb | sed -n 's/^[[:space:]]*version "\([^"]*\)".*/\1/p' || echo "")
 
           echo "Current version: $CURRENT_VERSION"
           echo "Previous version: $PREVIOUS_VERSION"
