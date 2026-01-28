@@ -4,10 +4,10 @@ Private Homebrew tap for the Entire CLI.
 
 ## Installation
 
-First, tap the repository (requires SSH access):
+First, tap the repository:
 
 ```bash
-brew tap entireio/tap git@github.com:entireio/homebrew-tap.git
+brew tap entireio/tap
 ```
 
 Then install:
