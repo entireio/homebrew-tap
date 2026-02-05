@@ -34,56 +34,53 @@ cask "entire" do
   name "entire"
   desc "CLI for Entire"
   homepage "https://github.com/entireio/cli"
-  version "0.3.9"
+  version "0.3.10"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
   binary "entire"
-  bash_completion "completions/entire.bash"
-  zsh_completion "completions/entire.zsh"
-  fish_completion "completions/entire.fish"
 
   on_macos do
     on_intel do
-      url "#{GitHubHelper.release_asset_url("v#{version}", "cli_darwin_amd64.tar.gz")}",
+      url "#{GitHubHelper.release_asset_url("v#{version}", "entire_darwin_amd64.tar.gz")}",
         header: [
           "Accept: application/octet-stream",
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "77fba4a7bb4dca6adb6ce0bcb2d120a15a69e89666f023155becb799ea3c94aa"
+      sha256 "bb02f35b1cd17c833024f4455931b8ee167bdcf81d88ade42fd63cccf5829191"
     end
     on_arm do
-      url "#{GitHubHelper.release_asset_url("v#{version}", "cli_darwin_arm64.tar.gz")}",
+      url "#{GitHubHelper.release_asset_url("v#{version}", "entire_darwin_arm64.tar.gz")}",
         header: [
           "Accept: application/octet-stream",
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "57a274cd98dbfd127290bd8da3d3548920ced5a1fd0a4c4e4df3982db706a470"
+      sha256 "e2ccf16f77105354941bb294a2574925a22b5645a7287255c198a8f1a17ce065"
     end
   end
 
   on_linux do
     on_intel do
-      url "#{GitHubHelper.release_asset_url("v#{version}", "cli_linux_amd64.tar.gz")}",
+      url "#{GitHubHelper.release_asset_url("v#{version}", "entire_linux_amd64.tar.gz")}",
         header: [
           "Accept: application/octet-stream",
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "f5823ef93947950c31438ca2c24e687cdd7203d9e312363761963194b180995b"
+      sha256 "07b5e4983a5158ef9213bd52709a4867b392637db8c00b3e3aadf88ea966696e"
     end
     on_arm do
-      url "#{GitHubHelper.release_asset_url("v#{version}", "cli_linux_arm64.tar.gz")}",
+      url "#{GitHubHelper.release_asset_url("v#{version}", "entire_linux_arm64.tar.gz")}",
         header: [
           "Accept: application/octet-stream",
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "6ce7f816f3f06a7294345cafcc9365a3de9d38df745543580138f0db12707482"
+      sha256 "59464d433d24eb4994868710b323e237b4725a3cf34ee52fb4e28d0d235c2c60"
     end
   end
 
