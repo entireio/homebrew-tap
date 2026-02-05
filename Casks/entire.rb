@@ -34,7 +34,7 @@ cask "entire" do
   name "entire"
   desc "CLI for Entire"
   homepage "https://github.com/entireio/cli"
-  version "0.3.10"
+  version "0.3.11"
 
   livecheck do
     skip "Auto-generated on release."
@@ -50,7 +50,7 @@ cask "entire" do
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "bb02f35b1cd17c833024f4455931b8ee167bdcf81d88ade42fd63cccf5829191"
+      sha256 "42fa24aedbdbe1c2ae93b02989a7b0be00bc2b18494d5c30565ffcc46c9e5df5"
     end
     on_arm do
       url "#{GitHubHelper.release_asset_url("v#{version}", "entire_darwin_arm64.tar.gz")}",
@@ -59,7 +59,7 @@ cask "entire" do
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "e2ccf16f77105354941bb294a2574925a22b5645a7287255c198a8f1a17ce065"
+      sha256 "c07b08ce28d0cdd983ebabd65badb90981aadfb8a8e3ba4d4e7146237cdd0069"
     end
   end
 
@@ -71,7 +71,7 @@ cask "entire" do
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "07b5e4983a5158ef9213bd52709a4867b392637db8c00b3e3aadf88ea966696e"
+      sha256 "94ca810715fb714cc71fcecb764a55339742830b36c239c9b5201a4b64c58675"
     end
     on_arm do
       url "#{GitHubHelper.release_asset_url("v#{version}", "entire_linux_arm64.tar.gz")}",
@@ -80,7 +80,7 @@ cask "entire" do
           "Authorization: Bearer #{GitHubHelper.token}",
           "X-GitHub-Api-Version: 2022-11-28",
         ]
-      sha256 "59464d433d24eb4994868710b323e237b4725a3cf34ee52fb4e28d0d235c2c60"
+      sha256 "9a921ad0276df34ff92c498cd9bee5e86cfb171df84aa6c5f23e6cb7b1d4902a"
     end
   end
 
