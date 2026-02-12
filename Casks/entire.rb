@@ -3,7 +3,7 @@ cask "entire" do
   name "entire"
   desc "CLI for Entire"
   homepage "https://github.com/entireio/cli"
-  version "0.4.2"
+  version "0.4.3"
 
   livecheck do
     skip "Auto-generated on release."
@@ -17,22 +17,22 @@ cask "entire" do
   on_macos do
     on_intel do
       url "https://github.com/entireio/cli/releases/download/v#{version}/entire_darwin_amd64.tar.gz"
-      sha256 "d1bccacaef3149f6481349bd3d9c586242be57fa290176a0b010c9c006ba28b5"
+      sha256 "99a0b8962a7f6e8b48bb958bdb54938790bc718429c2cbf40385441fc9e12d3e"
     end
     on_arm do
       url "https://github.com/entireio/cli/releases/download/v#{version}/entire_darwin_arm64.tar.gz"
-      sha256 "4ddbbda30e1bca1098d8e82e7233b9e6bf06d095060958e52dfdbfedf596b446"
+      sha256 "8f276ccb191ef59f5ca81df9743ee2551d62aaf8c5514e70152d5204f09a38a3"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/entireio/cli/releases/download/v#{version}/entire_linux_amd64.tar.gz"
-      sha256 "07a404df27ed5872575f1cb2694b0676ded29bf7e6db7ff3c4ff39da80dc53ea"
+      sha256 "bb5dde111981333ecbebe5b6f3f4dd5848d19f9bdea68088d63fed04cee56661"
     end
     on_arm do
       url "https://github.com/entireio/cli/releases/download/v#{version}/entire_linux_arm64.tar.gz"
-      sha256 "7a3bdc91d3254e8d60b43967c2314d9f80e498f67eeabe05080f5e31c8422e50"
+      sha256 "986daeaa849694e8999d68993edce50ea5a2b72202eb29dfbaf25c3a2fff60dd"
     end
   end
 
