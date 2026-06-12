@@ -4,16 +4,16 @@ Private Homebrew tap for the Entire CLI.
 
 ## Installation
 
-First, tap the repository:
+Stable:
 
 ```bash
-brew tap entireio/tap
+brew install --cask entireio/tap/entire
 ```
 
-Then install:
+Nightly:
 
 ```bash
-brew install --cask entire
+brew install --cask entireio/tap/entire@nightly
 ```
 
 ## Updating
